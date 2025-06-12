@@ -4,6 +4,8 @@
 Este projeto foi desenvolvido como um **teste técnico para vaga de Front-End**.  
 Trata-se de uma aplicação React utilizando Vite, com foco em responsividade, roteamento,  organização de código e deploy.
 
+🚀 **[Acesse o site do projeto](https://teste-tropa-digital.netlify.app/login)**
+
 
 ## Stack utilizada
 
@@ -36,8 +38,6 @@ Trata-se de uma aplicação React utilizando Vite, com foco em responsividade, r
 
   5. Abra o navegador no endereço exibido no terminal (normalmente http://localhost:5173)
     
-
-
 
 
 
@@ -83,6 +83,9 @@ Trata-se de uma aplicação React utilizando Vite, com foco em responsividade, r
 
   ### 📄 Paginação:
  - A listagem de eventos é paginada, permitindo uma navegação entre elas.
+
+
+##site no ar em:
 
 
 ## Contato
