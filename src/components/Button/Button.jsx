@@ -1,10 +1,9 @@
-import { ButtonStyle } from './Button.style'
+import { ButtonStyle } from './Button.style';
 
-export default function Button({ children, color, onClick,  }) {
+export default function Button({ children, onClick, active }) {
   return (
-    <ButtonStyle color={color} onClick={onClick} >
-      
+    <ButtonStyle onClick={onClick} $active={active}>
       {children}
     </ButtonStyle>
-  )
+  );
 }
