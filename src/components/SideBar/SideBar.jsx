@@ -45,7 +45,7 @@ export default function SideBar() {
           <MenuTitle>menu</MenuTitle>
           <ul>
             <li>
-              <a href="">
+              <a href="/dashboard">
                 <img src={DashboardIcon} alt="Dashboard" />
                 <span>Dashboard</span>
               </a>
@@ -57,13 +57,13 @@ export default function SideBar() {
               </a>
             </li>
             <li>
-              <a href="">
+              <a href="/equipes">
                 <img src={Equipes} alt="Equipes" />
                 <span>Equipes</span>
               </a>
             </li>
             <li>
-              <a href="">
+              <a href="/inscricoes">
                 <img src={Inscricoes} alt="Inscrições" />
                 <span>Inscrições</span>
               </a>
