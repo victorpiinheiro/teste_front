@@ -1,5 +1,5 @@
 import { Container, Content } from './HomePage.style';
-import SideBar from '../../components/SideBar/Sidebar';
+import SideBar from '../../components/SideBar/SideBar';
 
 import { Outlet } from 'react-router-dom';
 
