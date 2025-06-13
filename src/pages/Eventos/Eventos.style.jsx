@@ -26,8 +26,6 @@ export const ContainerEventos = styled.div`
   
     width: 400px;
 }
- 
-
 
     `
 export const ContentEventos = styled.div`
@@ -42,10 +40,6 @@ export const ContentEventos = styled.div`
   margin: 0;
   border: 1px solid black;
   }
-
-  
-
-
 `
 export const HeaderContent = styled.div`
   display: flex;
@@ -131,6 +125,7 @@ export const Tr = styled.tr`
   padding-right: 20px;
   text-align: left;
   align-items: center;
+  position: relative;
 
   td:nth-child(3) {
     svg {
@@ -148,6 +143,7 @@ export const Th = styled.th`
   text-overflow: ellipsis;
   color: rgba(204, 98, 55, 0.5) ;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  
 
 &:last-child {
     width: 40px;
@@ -161,6 +157,7 @@ export const Th = styled.th`
 `
 export const TBody = styled.tbody`
   padding-right: 20px;
+  
 `
 export const Td = styled.td`
   font-weight: 400px;
@@ -171,6 +168,7 @@ export const Td = styled.td`
   text-overflow: ellipsis;
   color: #657593;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  
   
 padding: 11.5px 0;
   &:last-child {
@@ -188,25 +186,57 @@ padding: 11.5px 0;
   }
 
 `
-export const Paginacao = styled.div`
+
+/* ================================= */
+
+export const SettingStyles = styled.div`
   display: flex;
-  justify-content: end;
-  align-items: end;
-  padding-right: 20px;
-  padding-bottom: 10px;
-  height: 74px;
-  width: 100%;
+  z-index: 1000;
+  flex-direction: column;
+  position: absolute;
+  right: 30px;
+  top: 0px;
+  
+  border: 1px solid rgba(0,0,0,0,05);
   
   box-sizing: border-box;
+  padding: 5px;
+  
+svg {
+  height: 15px;
+  width: 15px;
+  
+}
 
+  button {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-weight: 400;
+    font-size: 13px;
+    color: #000000;
+    gap: 10px;
+    border: none;
+    border-bottom: 1px solid #FFFFFF;
+    padding: 10px 20px;
+    background: #e6e3e3;
 
+    &:hover {
+    cursor: pointer;
+  }
+    
+  }
 
+  button:nth-child(1) {
+    
+    border-radius:  15px 15px 0 0;
+    
+  }
+  button:nth-child(3) {
+    border-bottom: none;
+    color: #FF0000;
+    border-radius: 0 0 15px 15px;
+  }
 
-
+  
 `
-
-
-
-
-
-

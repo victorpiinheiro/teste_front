@@ -1,6 +1,11 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
-import { ContainerEventos, ContentEventos, HeaderContent, EventosInfo, Table, Thead, Tr, Th, TBody, Td, Paginacao, IconWrapper } from './Eventos.style';
+import {
+  ContainerEventos, ContentEventos,
+  HeaderContent, EventosInfo, Table,
+  Thead, Tr, Th, TBody, Td, IconWrapper,
+  SettingStyles
+} from './Eventos.style';
 
 import { MdMoreVert, MdAdd, MdSearch, MdLens } from "react-icons/md";
 
@@ -8,26 +13,27 @@ import Button from '../../components/Button/Button';
 import Input from '../../components/Input/Input';
 import Pagination from '../../components/Pagination/Pagination';
 
-import {eventoInfo} from '../../data/EventoInfo';
+import { eventoInfo } from '../../data/EventoInfo';
 
 export default function Eventos() {
   const [inputValue, setInputValue] = useState('');
-  const [currentPage, setCurrentPage] = useState(0)
+  const [currentPage, setCurrentPage] = useState(0);
+  const [showSetting, setShowSettings] = useState(null);
 
+  const settingRef = useRef(null)
 
   const MAX_ITENS_PER_PAGE = 5;
   const startIndex = currentPage * MAX_ITENS_PER_PAGE;
   const endIndex = startIndex + MAX_ITENS_PER_PAGE;
-  
+
 
   const getStatusColor = (status) => {
     switch (status) {
       case 'Ativo': return '#4DEF00'
       case 'Pendente': return '#FFD700';
-      default:  return '#FF0000'; 
+      default: return '#FF0000';
     }
   }
-
 
   const eventosFiltrados = eventoInfo.filter((evento) => {
 
@@ -43,11 +49,23 @@ export default function Eventos() {
 
   useEffect(() => {
     setCurrentPage(0)
-   }, [inputValue])
-  
+  }, [inputValue])
+
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (settingRef.current && !settingRef.current.contains(e.target)) {
+        setShowSettings(null);
+      }
+    }
+
+    return () => {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+  }, [])
+
 
   return (
-    
+
     <ContainerEventos>
       <h2>Todos eventos</h2>
       <ContentEventos>
@@ -92,8 +110,14 @@ export default function Eventos() {
                     {evento.status}
                   </Td>
                   <Td>{evento.data}</Td>
-                  <Td ><MdMoreVert /></Td>
+                  <Td onClick={() => {
 
+                    setShowSettings(evento.id)
+                  }}>
+                    <MdMoreVert />
+                    {showSetting === evento.id && (
+                      <SettingsEvents innerRef={settingRef} />)}
+                  </Td>
                 </Tr>
               ))}
             </TBody>
@@ -102,19 +126,32 @@ export default function Eventos() {
 
         </EventosInfo>
 
-        <Paginacao>
-         
-          <Pagination 
+
+
+        <Pagination
           total={eventoInfo.length}
           totalPerPage={MAX_ITENS_PER_PAGE}
           setCurrentPage={setCurrentPage}
           currentPage={currentPage}
-          />
-        
+        />
 
-        </Paginacao>
+
+
       </ContentEventos>
     </ContainerEventos>
 
+  )
+}
+
+
+import { MdOutlineRestoreFromTrash, MdRemoveRedEye, MdEdit } from 'react-icons/md'
+
+function SettingsEvents({ innerRef }) {
+  return (
+    <SettingStyles ref={innerRef}>
+      <button> <MdRemoveRedEye />Visualizar </button>
+      <button> <MdEdit /> Editar</button>
+      <button> <MdOutlineRestoreFromTrash />Remover</button>
+    </SettingStyles>
   )
 }
