@@ -22,16 +22,13 @@ import logout from '../../assets/icons/logout.svg';
 import userImage from '../../assets/images/user-image.svg';
 
 import Eventos from '../../assets/icons/Eventos.jsx'
-import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 export default function SideBar() {
   const navigate = useNavigate()
-  const [isLogout, setIsLogout] = useState(false)
-  
+
   const logoutSistema = () => {
     localStorage.removeItem('Token');
-    setIsLogout(true)
     navigate('/login')
   }
   return (
@@ -93,7 +90,7 @@ export default function SideBar() {
 
         </EditProfileLink>
 
-        <LogoutButton onClick={ logoutSistema}>
+        <LogoutButton onClick={logoutSistema}>
           <img src={logout} alt="" />
           Sair
         </LogoutButton>

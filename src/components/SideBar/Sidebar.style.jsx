@@ -133,10 +133,7 @@ export const NavList = styled.div`
     }
   }
  
- 
 `
-
-
 export const MenuTitle = styled.h6`
   
   line-height: 15px;
@@ -156,9 +153,6 @@ export const MenuTitle = styled.h6`
   }
  
 `
-
-
-
 export const UserSection = styled.div`
   display: flex;
   flex-direction: column;
@@ -184,7 +178,6 @@ export const DadosUser = styled.div`
 
   }
   `
-
 export const AvatarContainer = styled.div`
   width: 40px;
   height: 40px;
@@ -225,12 +218,8 @@ p{
       font-size: 10px;
     }
 
-    
-
   }
 `;
-
-
 
 export const EditProfileLink = styled.div`
  
@@ -239,15 +228,6 @@ export const EditProfileLink = styled.div`
   padding: 10px 0 10px;
   margin: 0 10px;
 
-  &:hover {
-    cursor: pointer;
-    background: ${color.primaryColor};
-    
-    span {
-      color: #FFFFFF;
-    }
-  }
-  
 
    a {
     padding-left: 10px;
@@ -262,12 +242,15 @@ export const EditProfileLink = styled.div`
     color: #252525;
    }
 
-    &:hover {
+   &:hover {
+    border-radius: 4px;
     cursor: pointer;
     background: ${color.primaryColor};
-    border-radius: 5px;
-    color: #FFFFFF;
+     span, img, svg {
+       color: #FFFFFF;
+       filter: brightness(0) invert(1);
     }
+  }
 
      @media (max-width: 800px) {
       
@@ -310,6 +293,11 @@ margin: 0 10px 30px 10px;
     background: ${color.primaryColor};
     border-radius: 5px;
     color: #FFFFFF;
+
+     span, img, svg {
+       color: #FFFFFF;
+       filter: brightness(0) invert(1);
+  }
     
   }
 
