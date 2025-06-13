@@ -1,6 +1,6 @@
 import Button from '../Button/Button';
 
-import {UlStyle} from './Pagination.style'
+import {UlStyle, Paginacao} from './Pagination.style'
 
 export default function Pagination({ total, totalPerPage, currentPage, setCurrentPage }) {
   const totalPages = Math.ceil(total / totalPerPage);
@@ -23,7 +23,7 @@ const handleClick = (index) => {
   return setCurrentPage(index );
  }
   return (
-    <nav>
+    <Paginacao>
 
       <UlStyle>
       <Button
@@ -49,6 +49,6 @@ const handleClick = (index) => {
 
         />
       </UlStyle>
-    </nav>
+    </Paginacao>
   )
 }

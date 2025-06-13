@@ -1,5 +1,15 @@
 import styled from 'styled-components';
 
+export const Paginacao = styled.div`
+  display: flex;
+  justify-content: end;
+  align-items: end;
+  padding-right: 20px;
+  padding-bottom: 10px;
+  height: 74px;
+  width: 100%;
+  box-sizing: border-box;
+`
 
 export const UlStyle = styled.ul `
   display: flex;
