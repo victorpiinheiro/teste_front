@@ -58,6 +58,7 @@ export default function Eventos() {
       }
     }
 
+    document.addEventListener('mousedown', handleClickOutside);
     return () => {
       document.addEventListener('mousedown', handleClickOutside);
     }
